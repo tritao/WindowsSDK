@@ -1,0 +1,15 @@
+language: shell
+
+os:
+- windows
+
+script: |
+  ./run.cmd
+
+deploy:
+  provider: releases
+  token: ${GITHUB_TOKEN}
+  file_glob: true
+  file: "*.tar.*"
+  skip_cleanup: true
+  name: "Windows SDKs"
