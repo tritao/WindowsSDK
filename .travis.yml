@@ -1,0 +1,16 @@
+language: shell
+
+os:
+- windows
+
+script: |
+  ./run.cmd
+
+deploy:
+  edge: true
+  provider: releases
+  token: ${GITHUB_TOKEN}
+  file_glob: true
+  file: '*.tar.*'
+  name: "Windows SDKs"
+  tag_name: "release"
